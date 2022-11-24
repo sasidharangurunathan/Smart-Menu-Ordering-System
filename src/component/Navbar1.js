@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "../../src/index.css";
-import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
-import Dropdown from 'react-bootstrap/Dropdown';
+import { Navbar, Nav, Container } from "react-bootstrap";
+// import Dropdown from 'react-bootstrap/Dropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Routes,
+  
 } from "react-router-dom";
 
 import Home from "./Home";
@@ -37,33 +38,35 @@ class Navbar1 extends Component {
               
               <Nav className="me-auto">
                 <Nav.Link href="/home">Home</Nav.Link>
+            <NavDropdown
+              id="nav-dropdown-dark-example"
+              title="Menu"
+              menuVariant="dark"
+            >
+            <NavDropdown.Item href="/menu">Add Menu</NavDropdown.Item>
+              
+              <NavDropdown.Item href="/menulist">MenuList</NavDropdown.Item>
+              <NavDropdown.Divider />
+              
+            </NavDropdown>
+                <NavDropdown
+              id="nav-dropdown-dark-example"
+              title="Table"
+              menuVariant="dark"
+            >
+            <NavDropdown.Item href="/tablelist">View Table</NavDropdown.Item>
+              
+              <NavDropdown.Item href="/table">Add Table</NavDropdown.Item>
+              <NavDropdown.Item href="/view">Delete Table</NavDropdown.Item>
+              <NavDropdown.Divider />
+              
+            </NavDropdown>
+          
                 
-                <Dropdown className="m-1">
-      <Dropdown.Toggle>
-        Menu
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="/menu">Add Menu</Dropdown.Item>
-        <Dropdown.Item href="/menulist">MenuList</Dropdown.Item>
- 
-        
-      </Dropdown.Menu>
-    </Dropdown>
                 
                 
-                <Dropdown className="m-1">
-      <Dropdown.Toggle>
-        Table
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="/tablelist">View Table</Dropdown.Item>
-        <Dropdown.Item href="/table">Add Table</Dropdown.Item>
-        <Dropdown.Item href="/view">Delete Table</Dropdown.Item>
-        
-      </Dropdown.Menu>
-    </Dropdown>
+                
+               
                 <Nav.Link href="/orders">Orders</Nav.Link>
                 <Nav.Link href="/report">Report</Nav.Link>
                 
